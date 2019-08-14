@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 import sys
 import pytz
 import re
@@ -8,10 +8,12 @@ DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
 
 
 def get_timezones(partial):
+    kt = "HI KT"
     regex = re.compile(re.escape(partial.lower()))
     for timezone in pytz.all_timezones:
         if re.search(regex, timezone.lower()):
             yield timezone
+            print(kt)
 
 
 def run(partial):
